@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Reconhecimento Digital - ENFAM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark-bg: #020617;
+            --slate-blue: #0f172a;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: var(--dark-bg);
+            color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(90deg, #d4af37, #fde68a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .badge-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .badge-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.3);
+        }
+
+        .hero-mesh {
+            background-image: radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.15) 0, transparent 50%), 
+                              radial-gradient(at 100% 100%, rgba(15, 23, 42, 1) 0, transparent 50%);
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 1.5rem;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(212, 175, 55, 0.2);
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navegação -->
+    <nav class="fixed w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gold-gradient rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-gavel text-slate-950 text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight uppercase">ENFAM <span class="text-gold-gradient">Digital</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest">
+                    <a href="#hero" class="hover:text-[#d4af37] transition">Início</a>
+                    <a href="#sistema" class="hover:text-[#d4af37] transition">O Sistema</a>
+                    <a href="#emblemas" class="hover:text-[#d4af37] transition">Emblemas</a>
+                    <a href="#jornada" class="hover:text-[#d4af37] transition">Jornada</a>
+                </div>
+                <button class="bg-[#d4af37] text-slate-950 px-6 py-2 rounded-full font-bold text-sm hover:bg-[#fde68a] transition uppercase tracking-tighter">
+                    Aceder ao AVA
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção Hero -->
+    <section id="hero" class="relative pt-32 pb-20 md:pt-48 md:pb-32 hero-mesh overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-8xl font-serif mb-6 leading-tight">
+                    Reconhecendo a <br>
+                    <span class="gold-gradient italic">Excelência Judiciária</span>
+                </h1>
+                <p class="text-lg md:text-2xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+                    Um ecossistema de gamificação desenhado para valorizar o aperfeiçoamento contínuo, a liderança estratégica e a colaboração entre magistrados.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <a href="#emblemas" class="px-8 py-4 bg-white/5 border border-white/10 hover:border-[#d4af37]/50 rounded-2xl transition-all flex items-center justify-center gap-2 group">
+                        Conhecer os Selos
+                        <i class="fa-solid fa-arrow-down group-hover:translate-y-1 transition"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção O Sistema -->
+    <section id="sistema" class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-serif mb-8 text-[#d4af37]">Porquê Emblemas Digitais?</h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="w-14 h-14 shrink-0 rounded-2xl bg-slate-900 border border-white/5 flex items-center justify-center text-2xl text-[#d4af37]">
+                                <i class="fa-solid fa-fire-glow"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Motivação Intrínseca</h4>
+                                <p class="text-slate-400">Transformamos módulos teóricos densos em conquistas visuais que reforçam o sentido de progresso na carreira.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-14 h-14 shrink-0 rounded-2xl bg-slate-900 border border-white/5 flex items-center justify-center text-2xl text-[#d4af37]">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Mapeamento de Talentos</h4>
+                                <p class="text-slate-400">O sistema permite identificar magistrados com expertises específicas em áreas técnicas ou competências de gestão.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-14 h-14 shrink-0 rounded-2xl bg-slate-900 border border-white/5 flex items-center justify-center text-2xl text-[#d4af37]">
+                                <i class="fa-solid fa-handshake-angle"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Cultura de Colaboração</h4>
+                                <p class="text-slate-400">Incentivamos o "Estar Junto Virtual", onde a troca de experiências em fóruns é formalmente reconhecida.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-[#d4af37]/10 blur-3xl rounded-full"></div>
+                    <div class="relative bg-slate-900 p-8 rounded-3xl border border-white/5 shadow-2xl">
+                        <div class="flex justify-between items-center mb-8">
+                            <h3 class="text-2xl font-bold">Impacto Estimado</h3>
+                            <span class="text-[#d4af37] font-mono">DATA_2024</span>
+                        </div>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2 text-sm font-semibold uppercase tracking-wider">
+                                    <span>Engajamento em Fóruns</span>
+                                    <span>+85%</span>
+                                </div>
+                                <div class="h-3 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-[#d4af37] to-white w-[85%]"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2 text-sm font-semibold uppercase tracking-wider">
+                                    <span>Conclusão de Módulos</span>
+                                    <span>+60%</span>
+                                </div>
+                                <div class="h-3 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-[#d4af37] to-white w-[60%]"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2 text-sm font-semibold uppercase tracking-wider">
+                                    <span>Troca de Experiências</span>
+                                    <span>+40%</span>
+                                </div>
+                                <div class="h-3 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-[#d4af37] to-white w-[40%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Emblemas -->
+    <section id="emblemas" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-serif mb-4">Galeria de <span class="gold-gradient">Conquistas</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Conheça o significado de cada insígnia e os critérios necessários para sua obtenção.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Selo 1: Especialista -->
+                <div class="badge-card p-8 rounded-3xl group">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="w-full md:w-48 shrink-0 aspect-square rounded-2xl overflow-hidden bg-slate-950 border border-white/5 p-4">
+                            <img src="images/Emblema_Selo_de_Especialista_Tecnico.png" alt="Selo Especialista Técnico" class="w-full h-full object-contain transition duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold mb-4 text-[#d4af37]">Especialista Técnico</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="text-sm uppercase tracking-widest text-white font-bold mb-1">O que significa?</h4>
+                                    <p class="text-slate-400 text-sm">Representa a consagração do magistrado em uma área específica do Direito, demonstrando um domínio técnico profundo e atualizado sobre temas complexos da jurisdição.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm uppercase tracking-widest text-white font-bold mb-1">Como obter?</h4>
+                                    <p class="text-slate-400 text-sm">O usuário deverá atingir uma nota superior a 90% na avaliação final de um dos módulos técnicos avançados (ex: Direito Eleitoral ou Ambiental) e completar todas as leituras complementares.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5">
+                        <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Categoria: Excelência Acadêmica</span>
+                    </div>
+                </div>
+
+                <!-- Selo 2: Gestão -->
+                <div class="badge-card p-8 rounded-3xl group">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="w-full md:w-48 shrink-0 aspect-square rounded-2xl overflow-hidden bg-slate-950 border border-white/5 p-4">
+                            <img src="images/Emblema_Selo_de_Gestao_e_Lideranca.png" alt="Emblema Gestão e Liderança" class="w-full h-full object-contain transition duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold mb-4 text-[#d4af37]">Gestão e Liderança</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="text-sm uppercase tracking-widest text-white font-bold mb-1">O que significa?</h4>
+                                    <p class="text-slate-400 text-sm">Valida as "soft skills" de administração judiciária, reconhecendo a capacidade do magistrado de liderar equipes, otimizar processos internos e resolver crises com equilíbrio e estratégia.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm uppercase tracking-widest text-white font-bold mb-1">Como obter?</h4>
+                                    <p class="text-slate-400 text-sm">É necessário concluir com sucesso a simulação do estudo de caso "Esperança do Norte" e participar ativamente do Workshop de Gestão Judiciária, apresentando um plano de melhoria funcional.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5">
+                        <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Categoria: Liderança Administrativa</span>
+                    </div>
+                </div>
+
+                <!-- Selo 3: Colaboração -->
+                <div class="badge-card p-8 rounded-3xl group">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="w-full md:w-48 shrink-0 aspect-square rounded-2xl overflow-hidden bg-slate-950 border border-white/5 p-4">
+                            <img src="images/Emblema_Selo_de_Interatividade _Colaboracao.png" alt="Selo Interatividade" class="w-full h-full object-contain transition duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold mb-4 text-[#d4af37]">Interatividade</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="text-sm uppercase tracking-widest text-white font-bold mb-1">O que significa?</h4>
+                                    <p class="text-slate-400 text-sm">Simboliza o espírito de cooperação do magistrado. Este selo marca aqueles que não apenas aprendem, mas também ensinam e apoiam o crescimento da comunidade judiciária no ambiente virtual.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm uppercase tracking-widest text-white font-bold mb-1">Como obter?</h4>
+                                    <p class="text-slate-400 text-sm">O usuário deve alcançar pelo menos 10 participações relevantes (comentários construtivos ou compartilhamento de materiais) nos fóruns "Estar Junto Virtual" durante um único ciclo de curso.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5">
+                        <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Categoria: Engajamento Social</span>
+                    </div>
+                </div>
+
+                <!-- Selo 4: Unidade -->
+                <div class="badge-card p-8 rounded-3xl group">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="w-full md:w-48 shrink-0 aspect-square rounded-2xl overflow-hidden bg-slate-950 border border-white/5 p-4">
+                            <img src="images/Emblema_Selo_Conclusao_de_Unidade.png" alt="Conclusão de Unidade" class="w-full h-full object-contain transition duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold mb-4 text-[#d4af37]">Conclusão de Unidade</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="text-sm uppercase tracking-widest text-white font-bold mb-1">O que significa?</h4>
+                                    <p class="text-slate-400 text-sm">É o selo de progresso fundamental. Ele atesta a consistência do aluno, marcando que ele superou todas as etapas obrigatórias de uma unidade específica do programa de formação.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm uppercase tracking-widest text-white font-bold mb-1">Como obter?</h4>
+                                    <p class="text-slate-400 text-sm">Basta completar 100% das trilhas de aprendizagem obrigatórias de uma unidade (videoaulas, textos e quizzes rápidos) sem pendências no registro de atividades do AVA.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5">
+                        <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Categoria: Progresso de Carreira</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trilha de Jornada -->
+    <section id="jornada" class="py-24 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-serif text-center mb-20">Trilha de <span class="gold-gradient">Reconhecimento</span></h2>
+            
+            <div class="relative flex flex-col md:flex-row justify-between gap-12 md:gap-4">
+                <div class="timeline-line hidden md:block"></div>
+                
+                <div class="relative flex flex-col items-center text-center flex-1">
+                    <div class="w-12 h-12 bg-[#d4af37] rounded-full border-4 border-slate-900 mb-6 flex items-center justify-center text-slate-950 font-bold z-10">1</div>
+                    <h4 class="font-bold text-lg mb-2">Ingresso</h4>
+                    <p class="text-xs text-slate-400">Acesso ao ambiente virtual e integração inicial.</p>
+                </div>
+
+                <div class="relative flex flex-col items-center text-center flex-1">
+                    <div class="w-12 h-12 bg-[#d4af37] rounded-full border-4 border-slate-900 mb-6 flex items-center justify-center text-slate-950 font-bold z-10">2</div>
+                    <h4 class="font-bold text-lg mb-2">Marcos de Unidade</h4>
+                    <p class="text-xs text-slate-400">Conclusão das etapas base do curso.</p>
+                </div>
+
+                <div class="relative flex flex-col items-center text-center flex-1">
+                    <div class="w-12 h-12 bg-[#d4af37] rounded-full border-4 border-slate-900 mb-6 flex items-center justify-center text-slate-950 font-bold z-10">3</div>
+                    <h4 class="font-bold text-lg mb-2">Especialização</h4>
+                    <p class="text-xs text-slate-400">Aprofundamento técnico e gestão estratégica.</p>
+                </div>
+
+                <div class="relative flex flex-col items-center text-center flex-1">
+                    <div class="w-12 h-12 bg-[#d4af37] rounded-full border-4 border-slate-900 mb-6 flex items-center justify-center text-slate-950 font-bold z-10">4</div>
+                    <h4 class="font-bold text-lg mb-2">Mestria</h4>
+                    <p class="text-xs text-slate-400">Reconhecimento pleno e papel de mentor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matriz de Requisitos -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-900 rounded-3xl border border-white/5 overflow-hidden">
+                <div class="p-8 border-b border-white/5 bg-slate-950/50 text-center">
+                    <h3 class="text-2xl font-bold">Quadro de Requisitos</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="bg-slate-950 text-[#d4af37] text-xs uppercase tracking-[0.2em] font-bold">
+                                <th class="px-8 py-6">Categoria</th>
+                                <th class="px-8 py-6">Requisito para Obtenção</th>
+                                <th class="px-8 py-6 text-center">Validação</th>
+                                <th class="px-8 py-6">Valor Institucional</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5 text-slate-300">
+                            <tr>
+                                <td class="px-8 py-6 font-bold text-white">Especialista Técnico</td>
+                                <td class="px-8 py-6">Nota > 90% em Módulo Avançado</td>
+                                <td class="px-8 py-6 text-center">Automática</td>
+                                <td class="px-8 py-6 italic text-[#d4af37]">Expertise Jurídica</td>
+                            </tr>
+                            <tr>
+                                <td class="px-8 py-6 font-bold text-white">Gestão e Liderança</td>
+                                <td class="px-8 py-6">Simulação Case de Sucesso</td>
+                                <td class="px-8 py-6 text-center">Tutoria</td>
+                                <td class="px-8 py-6 italic text-[#d4af37]">Gestão Judiciária</td>
+                            </tr>
+                            <tr>
+                                <td class="px-8 py-6 font-bold text-white">Interatividade</td>
+                                <td class="px-8 py-6">10+ Contribuições em Fóruns</td>
+                                <td class="px-8 py-6 text-center">Automática</td>
+                                <td class="px-8 py-6 italic text-[#d4af37]">Cultura Colaborativa</td>
+                            </tr>
+                            <tr>
+                                <td class="px-8 py-6 font-bold text-white">Conclusão de Unidade</td>
+                                <td class="px-8 py-6">100% de Atividades Cumpridas</td>
+                                <td class="px-8 py-6 text-center">Automática</td>
+                                <td class="px-8 py-6 italic text-[#d4af37]">Consistência Formativa</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-950 py-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-[#d4af37] rounded flex items-center justify-center">
+                        <i class="fa-solid fa-graduation-cap text-slate-950"></i>
+                    </div>
+                    <span class="text-lg font-bold tracking-tighter uppercase italic">ENFAM</span>
+                </div>
+                <div class="text-slate-500 text-sm text-center">
+                    &copy; 2024 Escola Nacional de Formação e Aperfeiçoamento de Magistrados. <br>
+                    Sistema de Valorização do Magistrado no Ambiente Virtual.
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:text-[#d4af37] hover:border-[#d4af37] transition">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:text-[#d4af37] hover:border-[#d4af37] transition">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
